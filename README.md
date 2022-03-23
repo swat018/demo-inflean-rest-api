@@ -6,3 +6,4 @@
   - Event 생성 API 구현: 테스트 만들기
   - Event 생성 API 구현: 201 응답 받기
   - Event 생성 API 구현: EventRepository 구현
+  - Event 생성 API 구현: 입력값 제한하기
