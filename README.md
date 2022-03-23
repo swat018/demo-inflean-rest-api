@@ -7,3 +7,4 @@
   - Event 생성 API 구현: 201 응답 받기
   - Event 생성 API 구현: EventRepository 구현
   - Event 생성 API 구현: 입력값 제한하기
+  - Event 생성 API 구현: 입력값 이외에 에러 발생
