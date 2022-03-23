@@ -4,3 +4,4 @@
   - Project 만들기
   - Event 생성 API 구현: Event 도메인 구현
   - Event 생성 API 구현: 테스트 만들기
+  - Event 생성 API 구현: 201 응답 받기
