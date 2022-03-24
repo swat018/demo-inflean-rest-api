@@ -10,3 +10,4 @@
   - Event 생성 API 구현: 입력값 이외에 에러 발생
   - Event 생성 API 구현: Bad Request 처리
   - Event 생성 API 구현: Bad Request 응답 본문 만들기
+  - Event 생성 API 구현: 비즈니스 로직 적용
