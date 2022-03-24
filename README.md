@@ -3,6 +3,8 @@
   -
   - Project 만들기
   - Event 생성 API 구현: Event 도메인 구현
+- 이벤트 생성 API 개발
+  - 
   - Event 생성 API 구현: 테스트 만들기
   - Event 생성 API 구현: 201 응답 받기
   - Event 생성 API 구현: EventRepository 구현
@@ -12,3 +14,6 @@
   - Event 생성 API 구현: Bad Request 응답 본문 만들기
   - Event 생성 API 구현: 비즈니스 로직 적용
   - Event 생성 API 구현: 매개변수를 이용한 테스트
+- HATEOAS와 Self-Describtive Message 적용
+  -
+  - 스프링 HATEOAS 적용
