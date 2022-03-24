@@ -1,4 +1,4 @@
-package me.swat018.demoinfleanrestapi;
+package me.swat018.demoinfleanrestapi.common;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

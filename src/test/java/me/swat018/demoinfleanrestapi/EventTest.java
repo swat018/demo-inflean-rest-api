@@ -1,6 +1,7 @@
 package me.swat018.demoinfleanrestapi;
 
 
+import me.swat018.demoinfleanrestapi.events.Event;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

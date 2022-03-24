@@ -1,4 +1,4 @@
-package me.swat018.demoinfleanrestapi;
+package me.swat018.demoinfleanrestapi.events;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -12,6 +12,7 @@ public class EventValidator {
         if (eventDto.getBasePrice() > eventDto.getMaxPrice() && eventDto.getMaxPrice() > 0) {
             errors.rejectValue("basePrice", "wrongValue","BasePrice is wrong");
             errors.rejectValue("maxPrice", "wrongValue","MaxPrice is wrong");
+            errors.reject("wrongPrices", "Values of Prices are wrong");
         }
 
         LocalDateTime endEventDateTime = eventDto.getEndEventDateTime();
