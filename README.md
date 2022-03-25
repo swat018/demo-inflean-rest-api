@@ -17,4 +17,4 @@
 - HATEOAS와 Self-Describtive Message 적용
   -
   - 스프링 HATEOAS 적용
-  - 스프링 RESTDocs 적용
+  - 스프링 REST Docs 적용
