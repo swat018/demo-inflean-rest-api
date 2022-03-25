@@ -1,4 +1,4 @@
-package me.swat018.demoinfleanrestapi;
+package me.swat018.demoinfleanrestapi.events;
 
 
 import me.swat018.demoinfleanrestapi.events.Event;
