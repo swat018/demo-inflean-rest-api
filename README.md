@@ -19,3 +19,4 @@
   - 스프링 HATEOAS 적용
   - 스프링 REST Docs 적용
   - 스프링 REST Docs: 링크, (Req, Res) 필드와 헤더 문서화 (각종 문서 조각 생성하기)
+  - 스프링 REST Docs 문서 빌드
