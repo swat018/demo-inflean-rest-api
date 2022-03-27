@@ -1,6 +1,7 @@
 package me.swat018.demoinfleanrestapi.common;
 
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.SerializableString;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import org.springframework.boot.jackson.JsonComponent;
@@ -12,6 +13,7 @@ import java.io.IOException;
 public class ErrorSerializer extends JsonSerializer<Errors> {
     @Override
     public void serialize(Errors errors, JsonGenerator gen, SerializerProvider serializerProvider) throws IOException {
+        gen.writeFieldName("errors");
         gen.writeStartArray();
         errors.getFieldErrors().forEach(e ->{
             try {

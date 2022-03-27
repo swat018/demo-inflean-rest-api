@@ -21,3 +21,4 @@
   - 스프링 REST Docs: 링크, (Req, Res) 필드와 헤더 문서화 (각종 문서 조각 생성하기)
   - 스프링 REST Docs 문서 빌드
   - PostgreSQL 적용 - 테스트 DB와 설정 분리하기
+  - API 인덱스 핸들러 만들기
