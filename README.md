@@ -28,3 +28,6 @@
   - Event 조회 API
   - Event 수정 API
   - 테스트 코드 리펙토링
+- REST API 보안 적용
+  - 
+  - Account 도메인 추가

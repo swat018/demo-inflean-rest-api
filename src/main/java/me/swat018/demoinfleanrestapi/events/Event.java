@@ -1,6 +1,7 @@
 package me.swat018.demoinfleanrestapi.events;
 
 import lombok.*;
+import me.swat018.demoinfleanrestapi.accounts.Account;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -26,6 +27,8 @@ public class Event {
     private boolean free;
     @Enumerated(EnumType.STRING)
     private EventStatus eventStatus = EventStatus.DRAFT;
+    @ManyToOne
+    private Account manager;
 
     public void upadte() {
         // Update free
