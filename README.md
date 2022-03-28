@@ -25,3 +25,4 @@
 - 이벤트 조회 및 수정 REST API 개발
   -
   - Event 목록 조회 API
+  - Event 조회 API
