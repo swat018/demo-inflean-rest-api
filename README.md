@@ -27,3 +27,4 @@
   - Event 목록 조회 API
   - Event 조회 API
   - Event 수정 API
+  - 테스트 코드 리펙토링

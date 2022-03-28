@@ -1,7 +1,6 @@
 package me.swat018.demoinfleanrestapi.events;
 
 
-import me.swat018.demoinfleanrestapi.events.Event;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
