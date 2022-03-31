@@ -1,6 +1,7 @@
 package me.swat018.demoinfleanrestapi.configs;
 
 import me.swat018.demoinfleanrestapi.accounts.Account;
+import me.swat018.demoinfleanrestapi.accounts.AccountRepository;
 import me.swat018.demoinfleanrestapi.accounts.AccountRole;
 import me.swat018.demoinfleanrestapi.accounts.AccountService;
 import org.modelmapper.ModelMapper;
@@ -34,15 +35,24 @@ public class AppConfig {
             @Autowired
             AccountService accountService;
 
+            @Autowired
+            AppProperties appProperties;
+
             @Override
             public void run(ApplicationArguments args) throws Exception {
-
-                Account jinwoo = Account.builder()
-                        .email("jinwoo@gmail.com")
-                        .password("pass")
+                Account admin = Account.builder()
+                        .email(appProperties.getAdminUsername())
+                        .password(appProperties.getAdminPassword())
                         .roles(Set.of(AccountRole.ADMIN, AccountRole.USER))
                         .build();
-                accountService.saveAccount(jinwoo);
+                accountService.saveAccount(admin);
+
+                Account user = Account.builder()
+                        .email(appProperties.getUserUsername())
+                        .password(appProperties.getUserPassword())
+                        .roles(Set.of(AccountRole.USER))
+                        .build();
+                accountService.saveAccount(user);
             }
         };
     }

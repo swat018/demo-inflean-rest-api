@@ -6,8 +6,7 @@ import me.swat018.demoinfleanrestapi.accounts.AccountRole;
 import me.swat018.demoinfleanrestapi.accounts.AccountService;
 import me.swat018.demoinfleanrestapi.common.BaseConrollerTest;
 import me.swat018.demoinfleanrestapi.common.TestDescription;
-import org.apache.tomcat.Jar;
-import org.aspectj.lang.annotation.Before;
+import me.swat018.demoinfleanrestapi.configs.AppProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,8 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.MediaTypes;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.http.codec.cbor.Jackson2CborDecoder;
-import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.oauth2.common.util.Jackson2JsonParser;
 import org.springframework.test.web.servlet.ResultActions;
 
@@ -43,6 +40,9 @@ public class EventControllerTests extends BaseConrollerTest {
 
     @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    AppProperties appProperties;
 
     @BeforeEach
     public void setUp() {
@@ -138,22 +138,17 @@ public class EventControllerTests extends BaseConrollerTest {
 
     private String getAccessToken() throws Exception {
         //Given
-        String username = "park@gmail.com";
-        String password = "jinwoo";
         Account jinwoo = Account.builder()
-                .email(username)
-                .password(password)
+                .email(appProperties.getUserUsername())
+                .password(appProperties.getUserPassword())
                 .roles(Set.of(AccountRole.ADMIN, AccountRole.USER))
                 .build();
         this.accountService.saveAccount(jinwoo);
 
-        String clientId = "myApp";
-        String clientSecret = "pass";
-
         ResultActions perform = this.mockMvc.perform(post("/oauth/token")
-                        .with(httpBasic(clientId, clientSecret))
-                        .param("username", username)
-                        .param("password", password)
+                        .with(httpBasic(appProperties.getClientId(), appProperties.getClientSecret()))
+                        .param("username", appProperties.getUserUsername())
+                        .param("password", appProperties.getUserPassword())
                         .param("grant_type", "password"))
                 .andDo(print())
                 .andExpect(status().isOk())
