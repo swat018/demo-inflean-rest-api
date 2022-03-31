@@ -136,14 +136,9 @@ public class EventControllerTests extends BaseConrollerTest {
         return "Bearer " + getAccessToken();
     }
 
-    private String getAccessToken() throws Exception {
+    private String getAccessToken() throws Exception {=
         //Given
-        Account jinwoo = Account.builder()
-                .email(appProperties.getUserUsername())
-                .password(appProperties.getUserPassword())
-                .roles(Set.of(AccountRole.ADMIN, AccountRole.USER))
-                .build();
-        this.accountService.saveAccount(jinwoo);
+        createAccount();
 
         ResultActions perform = this.mockMvc.perform(post("/oauth/token")
                         .with(httpBasic(appProperties.getClientId(), appProperties.getClientSecret()))
@@ -156,6 +151,15 @@ public class EventControllerTests extends BaseConrollerTest {
         var responseBody = perform.andReturn().getResponse().getContentAsString();
         Jackson2JsonParser parser = new Jackson2JsonParser();
         return parser.parseMap(responseBody).get("access_token").toString();
+    }
+
+    private Account createAccount() {
+        Account jinwoo = Account.builder()
+                .email(appProperties.getUserUsername())
+                .password(appProperties.getUserPassword())
+                .roles(Set.of(AccountRole.ADMIN, AccountRole.USER))
+                .build();
+        return this.accountService.saveAccount(jinwoo);
     }
 
     @Test
